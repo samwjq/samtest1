@@ -1,0 +1,124 @@
+swens-macbook-pro:samtest1 swen$ git push -u origin feature1
+error: git-credential-osxkeychain died of signal 11
+Username for 'https://github.com': samwjq
+Password for 'https://samwjq@github.com': 
+error: git-credential-osxkeychain died of signal 11
+Counting objects: 10, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 930 bytes | 0 bytes/s, done.
+Total 9 (delta 3), reused 0 (delta 0)
+To https://github.com/samwjq/samtest1.git
+ * [new branch]      feature1 -> feature1
+Branch feature1 set up to track remote branch feature1 from origin.
+swens-macbook-pro:samtest1 swen$ git checkout master
+Switched to branch 'master'
+swens-macbook-pro:samtest1 swen$ git status
+# On branch master
+nothing to commit, working directory clean
+swens-macbook-pro:samtest1 swen$ git log
+commit a1fbaa184dc41307833117f676fd0b76289dc104
+Author: samwjq <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 10:00:23 2016 +1000
+
+    add bash file
+
+commit ab91d3c8570129bf5eff7a303690d343c97c5862
+Author: swen <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 09:44:01 2016 +1000
+
+    first commit
+swens-macbook-pro:samtest1 swen$ pwd
+/Users/swen/git-test/samtest1
+swens-macbook-pro:samtest1 swen$ ls
+README.md	testbash
+swens-macbook-pro:samtest1 swen$ git checkout feature1
+Switched to branch 'feature1'
+swens-macbook-pro:samtest1 swen$ ls
+README.md		readme-newfeature
+swens-macbook-pro:samtest1 swen$ ls .git/
+COMMIT_EDITMSG  ORIG_HEAD       config          hooks/          info/           objects/        
+HEAD            branches/       description     index           logs/           refs/           
+swens-macbook-pro:samtest1 swen$ ls .git/branches/
+swens-macbook-pro:samtest1 swen$ git checkout master
+Switched to branch 'master'
+swens-macbook-pro:samtest1 swen$ git merge origin master
+merge: origin - not something we can merge
+swens-macbook-pro:samtest1 swen$ git merge --help
+swens-macbook-pro:samtest1 swen$ git merge newfeature1
+merge: newfeature1 - not something we can merge
+swens-macbook-pro:samtest1 swen$ git merge feature1
+Updating a1fbaa1..ae69a32
+Fast-forward
+ readme-newfeature | 1 +
+ testbash          | 1 -
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 readme-newfeature
+ delete mode 100644 testbash
+swens-macbook-pro:samtest1 swen$ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 4 commits.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+swens-macbook-pro:samtest1 swen$ git log
+commit ae69a3254dd669a23bac468b7d953ea2cd094216
+Author: samwjq <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 10:22:37 2016 +1000
+
+    Dfdfd
+
+commit ddb7daa8cb1a1263d4f435725b4e63cd00fb409b
+Author: samwjq <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 10:20:27 2016 +1000
+
+    ddd
+
+commit c47824730cdd61c562273dfb303d212136b6d588
+Author: samwjq <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 10:11:01 2016 +1000
+
+    Revert "add bash file"
+    
+    This reverts commit a1fbaa184dc41307833117f676fd0b76289dc104.
+
+commit ba107b36b037f87fb82867920a239cbd8c30d3b2
+Author: samwjq <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 10:10:55 2016 +1000
+
+    add new feature
+
+commit a1fbaa184dc41307833117f676fd0b76289dc104
+Author: samwjq <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 10:00:23 2016 +1000
+
+    add bash file
+
+commit ab91d3c8570129bf5eff7a303690d343c97c5862
+Author: swen <swen@swens-macbook-pro.local>
+Date:   Thu Apr 21 09:44:01 2016 +1000
+
+    first commit
+swens-macbook-pro:samtest1 swen$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+error: git-credential-osxkeychain died of signal 11
+Username for 'https://github.com': samwjq
+Password for 'https://samwjq@github.com': 
+error: git-credential-osxkeychain died of signal 11
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/samwjq/samtest1.git
+   a1fbaa1..ae69a32  master -> master
+
